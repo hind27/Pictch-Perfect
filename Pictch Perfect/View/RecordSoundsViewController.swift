@@ -19,6 +19,8 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
          stopButton.isEnabled=false
+        self.navigationItem.title = "Pitch Perfect"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
     }
     
@@ -38,7 +40,6 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
         let session = AVAudioSession.sharedInstance()
         // setup the session for playing and  recording audio
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
-        
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
         
         
@@ -71,9 +72,9 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
         }
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == " stopRecording " {
+        if segue.identifier == "stopRecording" {
             let playsoundVC = segue.destination as! PlaySoundsViewController
-            let recordedAudioURL = sender as! URL
+            let recordedAudioURL = audioRecorder.url
             playsoundVC.recordedAudioURL = recordedAudioURL
         }
     }

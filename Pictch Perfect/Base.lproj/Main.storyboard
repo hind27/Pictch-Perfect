@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Pitch Perfert-->
+        <!--Record Sounds View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pictch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,14 +25,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yla-we-Xdm">
-                                <rect key="frame" x="10" y="74" width="355" height="20"/>
+                                <rect key="frame" x="10" y="74" width="355" height="12"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8c-9S-YYy">
-                                <rect key="frame" x="110" y="264" width="158" height="156"/>
+                                <rect key="frame" x="110" y="256" width="155" height="156"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="98T-Vl-AEy"/>
                                     <constraint firstAttribute="height" constant="156" id="xZv-PX-k82"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
@@ -42,32 +43,37 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tku-0y-ivq">
-                                <rect key="frame" x="147" y="470" width="91" height="88"/>
+                                <rect key="frame" x="140" y="466" width="95" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="iwa-Up-XyB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Wva-4W-JSB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="fdb-Gz-Tj6"/>
+                                    <constraint firstAttribute="width" constant="95" id="z4F-xz-xAW"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Stop"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pS1-r6-g8w"/>
-                                    <segue destination="LT4-9A-oRA" kind="show" identifier="stopRecording" id="oNU-cd-p58"/>
+                                    <segue destination="LT4-9A-oRA" kind="show" identifier="stopRecording" id="jm3-G7-DYe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20234182476997375" green="0.27746516466140747" blue="0.44749408960342407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tku-0y-ivq" secondAttribute="trailing" constant="137" id="2As-QE-Cqc"/>
-                            <constraint firstItem="O8c-9S-YYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="4oS-BU-2Gc"/>
+                            <constraint firstItem="O8c-9S-YYy" firstAttribute="top" secondItem="Yla-we-Xdm" secondAttribute="bottom" constant="170" id="68d-Rv-x0F"/>
+                            <constraint firstItem="tku-0y-ivq" firstAttribute="top" secondItem="O8c-9S-YYy" secondAttribute="bottom" constant="54" id="7Xj-4c-QVl"/>
+                            <constraint firstItem="O8c-9S-YYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="7tZ-w2-xSz"/>
+                            <constraint firstItem="tku-0y-ivq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="AbC-G5-eSq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yla-we-Xdm" secondAttribute="trailing" constant="10" id="Agv-pk-IBn"/>
-                            <constraint firstItem="tku-0y-ivq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="QPY-kP-fqH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tku-0y-ivq" secondAttribute="bottom" constant="109" id="VfZ-qI-96L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tku-0y-ivq" secondAttribute="trailing" constant="140" id="JDA-7H-x84"/>
                             <constraint firstItem="Yla-we-Xdm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ydl-P2-WJc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tku-0y-ivq" secondAttribute="bottom" constant="111" id="YvK-t7-K1X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O8c-9S-YYy" secondAttribute="trailing" constant="110" id="Yxf-r0-GsS"/>
                             <constraint firstItem="Yla-we-Xdm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="i4P-sQ-4yC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O8c-9S-YYy" secondAttribute="trailing" constant="107" id="t2E-zT-svx"/>
-                            <constraint firstItem="tku-0y-ivq" firstAttribute="top" secondItem="O8c-9S-YYy" secondAttribute="bottom" constant="50" id="uez-48-nTR"/>
+                            <constraint firstItem="O8c-9S-YYy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nRm-2X-uXf"/>
+                            <constraint firstItem="O8c-9S-YYy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xj2-wg-G7N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pitch Perfert" id="TAn-pw-iGg"/>
+                    <navigationItem key="navigationItem" id="TAn-pw-iGg"/>
                     <connections>
                         <outlet property="recordingButton" destination="O8c-9S-YYy" id="YMN-vZ-f8L"/>
                         <outlet property="recordingLable" destination="Yla-we-Xdm" id="ldh-yc-wnE"/>
@@ -160,17 +166,21 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-l6-CLs">
                                 <rect key="frame" x="100" y="153" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BbE-UJ-Fpk"/>
+                                </constraints>
                                 <state key="normal" title="Select a sound filter"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20234182476997375" green="0.27746516466140747" blue="0.44749408960342407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bps-f9-nCj" firstAttribute="firstBaseline" secondItem="qfO-5Z-xVX" secondAttribute="firstBaseline" id="25e-oh-AJo"/>
                             <constraint firstItem="d44-sQ-YhD" firstAttribute="firstBaseline" secondItem="Bps-f9-nCj" secondAttribute="firstBaseline" id="3ZM-5y-0Ij"/>
                             <constraint firstItem="brS-3b-u3A" firstAttribute="trailing" secondItem="tDb-mb-eo8" secondAttribute="trailing" id="4hk-G7-icp"/>
+                            <constraint firstItem="Bps-f9-nCj" firstAttribute="width" secondItem="tDb-mb-eo8" secondAttribute="width" id="5Is-4h-xaJ"/>
                             <constraint firstItem="d44-sQ-YhD" firstAttribute="top" secondItem="qfO-5Z-xVX" secondAttribute="top" id="5hu-QG-Anr"/>
                             <constraint firstItem="Bps-f9-nCj" firstAttribute="baseline" secondItem="qfO-5Z-xVX" secondAttribute="baseline" id="6rI-gW-pej"/>
+                            <constraint firstItem="FnI-qb-eFM" firstAttribute="top" secondItem="uMd-2p-Z9F" secondAttribute="bottom" constant="71" id="794-pY-LzC"/>
                             <constraint firstItem="IGo-Vv-qfO" firstAttribute="firstBaseline" secondItem="tDb-mb-eo8" secondAttribute="firstBaseline" id="BQS-Ja-bWU"/>
                             <constraint firstItem="brS-3b-u3A" firstAttribute="leading" secondItem="tDb-mb-eo8" secondAttribute="leading" id="C2k-fY-mXu"/>
                             <constraint firstItem="dYp-zB-nSd" firstAttribute="trailing" secondItem="WFf-l6-CLs" secondAttribute="trailing" constant="95" id="D2g-La-wC7"/>
@@ -183,6 +193,7 @@
                             <constraint firstItem="dYp-zB-nSd" firstAttribute="trailing" secondItem="FnI-qb-eFM" secondAttribute="trailing" constant="83" id="Lg3-FG-7Ub"/>
                             <constraint firstItem="brS-3b-u3A" firstAttribute="width" secondItem="tDb-mb-eo8" secondAttribute="width" id="N4w-7S-2NQ"/>
                             <constraint firstItem="qfO-5Z-xVX" firstAttribute="width" secondItem="tDb-mb-eo8" secondAttribute="width" constant="-2" id="Ovw-Rb-nfe"/>
+                            <constraint firstItem="Bps-f9-nCj" firstAttribute="height" secondItem="tDb-mb-eo8" secondAttribute="height" id="PFy-LB-ByU"/>
                             <constraint firstItem="Bps-f9-nCj" firstAttribute="leading" secondItem="d44-sQ-YhD" secondAttribute="trailing" constant="60" id="SRP-Vo-Xyx"/>
                             <constraint firstItem="d44-sQ-YhD" firstAttribute="baseline" secondItem="Bps-f9-nCj" secondAttribute="baseline" id="SmX-er-Q5U"/>
                             <constraint firstItem="WFf-l6-CLs" firstAttribute="top" secondItem="dYp-zB-nSd" secondAttribute="top" constant="89" id="T5M-Wb-VMq"/>
@@ -194,6 +205,7 @@
                             <constraint firstItem="dYp-zB-nSd" firstAttribute="trailing" secondItem="Bps-f9-nCj" secondAttribute="trailing" constant="24" id="bxG-eo-fB2"/>
                             <constraint firstItem="brS-3b-u3A" firstAttribute="height" secondItem="tDb-mb-eo8" secondAttribute="height" id="cvJ-41-plA"/>
                             <constraint firstItem="dYp-zB-nSd" firstAttribute="bottom" secondItem="FnI-qb-eFM" secondAttribute="bottom" constant="57" id="d76-Bf-1Qc"/>
+                            <constraint firstItem="qfO-5Z-xVX" firstAttribute="leading" secondItem="dYp-zB-nSd" secondAttribute="leading" constant="30" id="e6T-9p-NuW"/>
                             <constraint firstItem="brS-3b-u3A" firstAttribute="top" secondItem="Bps-f9-nCj" secondAttribute="bottom" constant="45" id="hP7-iB-0er"/>
                             <constraint firstItem="FnI-qb-eFM" firstAttribute="top" secondItem="brS-3b-u3A" secondAttribute="bottom" constant="65" id="hb8-m2-hqh"/>
                             <constraint firstItem="uMd-2p-Z9F" firstAttribute="leading" secondItem="dYp-zB-nSd" secondAttribute="leading" constant="79" id="jRC-1M-hew"/>
@@ -203,6 +215,8 @@
                             <constraint firstItem="Bps-f9-nCj" firstAttribute="top" secondItem="tDb-mb-eo8" secondAttribute="bottom" constant="25" id="q4P-il-ZmV"/>
                             <constraint firstItem="IGo-Vv-qfO" firstAttribute="baseline" secondItem="tDb-mb-eo8" secondAttribute="baseline" id="sI7-7P-KJV"/>
                             <constraint firstItem="IGo-Vv-qfO" firstAttribute="width" secondItem="tDb-mb-eo8" secondAttribute="width" id="st9-Jg-hR8"/>
+                            <constraint firstItem="tDb-mb-eo8" firstAttribute="top" secondItem="WFf-l6-CLs" secondAttribute="bottom" constant="28" id="tR7-3Z-qSA"/>
+                            <constraint firstItem="qfO-5Z-xVX" firstAttribute="top" secondItem="IGo-Vv-qfO" secondAttribute="bottom" constant="25" id="v9k-aG-Gha"/>
                             <constraint firstItem="IGo-Vv-qfO" firstAttribute="top" secondItem="tDb-mb-eo8" secondAttribute="top" id="xya-4U-Hbv"/>
                             <constraint firstItem="IGo-Vv-qfO" firstAttribute="height" secondItem="tDb-mb-eo8" secondAttribute="height" id="yze-rX-hGw"/>
                         </constraints>
