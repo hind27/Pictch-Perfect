@@ -32,8 +32,7 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
         setupAudio()
          self.navigationItem.title = "Pitch Perfect"
-        self.navigationItem.title = "Pitch Perfect"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
