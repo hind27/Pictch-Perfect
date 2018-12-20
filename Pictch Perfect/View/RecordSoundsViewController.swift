@@ -18,16 +18,17 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-         stopButton.isEnabled=false
+        stopButton.isEnabled=false
         self.navigationItem.title = "Pitch Perfect"
     }
     
- // MARK: IBActions
+ // MARK:  - IBActions
 
+   
     @IBAction func recordAudio(_ sender: Any) {
-        recordingLable.text=" Tap To finish recording "
-        stopButton.isEnabled=true
-        recordingLable.isEnabled=false
+       
+        configureUI(true)
+        
         // it's used to get the directory path by document dicrectory to store  the audio recording
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -46,11 +47,15 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
         audioRecorder.record()
         
     }
+    func configureUI(_ isRecording:Bool = false) {
+        recordingLable.text = isRecording ? "Recording in progress": "Tap to Record"
+            stopButton.isEnabled = isRecording
+            recordingButton.isEnabled = !isRecording
+        }
     
+
     @IBAction func stopRecording(_ sender: Any) {
-        recordingLable.isEnabled=true
-        stopButton.isEnabled=false
-        recordingLable.text="Tap to record"
+        configureUI(false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)

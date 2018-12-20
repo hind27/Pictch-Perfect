@@ -32,6 +32,13 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
         setupAudio()
          self.navigationItem.title = "Pitch Perfect"
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+        stopButton.imageView?.contentMode = .scaleAspectFit
        
     }
     
