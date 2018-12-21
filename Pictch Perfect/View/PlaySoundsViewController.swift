@@ -73,6 +73,10 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender: Any) {
         stopAudio()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAudio()
+        
+    }
     }
 
