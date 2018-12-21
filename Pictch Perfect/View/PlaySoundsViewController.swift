@@ -7,7 +7,7 @@
 //
 
 import UIKit
- import AVFoundation
+import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     var recordedAudioURL:URL!
@@ -20,6 +20,7 @@ class PlaySoundsViewController: UIViewController {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
+    
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
@@ -30,8 +31,12 @@ class PlaySoundsViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAudio()
          self.navigationItem.title = "Pitch Perfect"
+         setupAudio()
+         scalesAspectFitForButton()
+    }
+    
+    func scalesAspectFitForButton(){
         snailButton.imageView?.contentMode = .scaleAspectFit
         rabbitButton.imageView?.contentMode = .scaleAspectFit
         chipmunkButton.imageView?.contentMode = .scaleAspectFit
@@ -39,13 +44,13 @@ class PlaySoundsViewController: UIViewController {
         echoButton.imageView?.contentMode = .scaleAspectFit
         reverbButton.imageView?.contentMode = .scaleAspectFit
         stopButton.imageView?.contentMode = .scaleAspectFit
-       
-    }
+     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
+    
     @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
@@ -69,6 +74,5 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
     }
     
-   
-    
-}
+    }
+

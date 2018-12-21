@@ -70,7 +70,10 @@ class RecordSoundsViewController: UIViewController ,AVAudioRecorderDelegate {
         {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
         }else {
-            print("recording is not sucessful")
+            print("Recording Audio Failed")
+            let alert = UIAlertController(title: "Reording Failed", message: "Racording audio failed due to some unknown error.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
