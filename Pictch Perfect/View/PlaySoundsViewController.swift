@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
+    
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
@@ -28,12 +29,12 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var echoButton: UIButton!
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.title = "Pitch Perfect"
-         setupAudio()
-         scalesAspectFitForButton()
+        self.navigationItem.title = "Pitch Perfect"
+        setupAudio()
+        scalesAspectFitForButton()
     }
     
     func scalesAspectFitForButton(){
@@ -44,7 +45,7 @@ class PlaySoundsViewController: UIViewController {
         echoButton.imageView?.contentMode = .scaleAspectFit
         reverbButton.imageView?.contentMode = .scaleAspectFit
         stopButton.imageView?.contentMode = .scaleAspectFit
-     }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -78,5 +79,5 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
         
     }
-    }
+}
 
